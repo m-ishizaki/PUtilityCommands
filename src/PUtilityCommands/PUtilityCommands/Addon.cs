@@ -18,6 +18,7 @@ namespace RKSoftware.PUtilityCommands
             if (args.Length < 2)
             {
                 Console.WriteLine("Usage: PUtilities putilitycommands rds sqlserver");
+                Console.WriteLine("Usage: PUtilities putilitycommands rds upgrade <Path of Implem.CodeDefiner.exe>");
                 return;
             }
 
@@ -27,6 +28,13 @@ namespace RKSoftware.PUtilityCommands
                     new Commands.RdsConfig().Execute().Wait();
                     return;
                 }
+            if (string.Compare("rds", args[0], true) == 0)
+                if (string.Compare("upgrade", args[1], true) == 0)
+                {
+                    new Commands.RdbmsUpgrade().Execute(args);
+                    return;
+                }
+
 
             Console.WriteLine("Invalid command.");
         }

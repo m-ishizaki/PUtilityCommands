@@ -2,4 +2,4 @@
 Console.WriteLine("Hello, World!");
 
 
-new RKSoftware.PUtilityCommands.Commands.RdsConfig().Execute().Wait();
+new RKSoftware.PUtilityCommands.Addon().Execute(["rds", "upgrade", @"C:\00_Files\repos\p\Implem.Pleasanter\Implem.CodeDefiner\bin\Release\net10.0\Implem.CodeDefiner.exe"]);
